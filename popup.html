@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Clock</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    a {
+      color: #B82132;
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center py-3">
+    <!-- Add menu button and dropdown -->
+    <div class="menu-container">
+      <button id="menu-toggle" class="btn-icon" title="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div id="menu-dropdown" class="menu-dropdown">
+        <div class="menu-header">Settings</div>
+        <div class="menu-divider"></div>
+        <div class="menu-item contact">
+          <small>Contact:</small>
+          <a href="mailto:hemsharan3050@gmail.com">hemsharan3050@gmail.com</a>
+          <br>
+          <small>GitHub:</small>
+          <a href="https://github.com/Ahsharan" target="_blank">https://github.com/Ahsharan</a>
+          <br>
+          <small>LinkedIn:</small>
+          <a href="https://www.linkedin.com/in/ahsharan/" target="_blank">https://www.linkedin.com/in/ahsharan/</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add theme switcher button -->
+    <div class="theme-switcher">
+      <button id="theme-toggle" class="btn-icon" title="Change Theme">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
+    </div>
+    
+    <h1 class="mb-3 text-accent">Pomodoro Timer</h1>
+    
+    <!-- Timer Display -->
+    <div class="timer-container">
+      <div id="timer" class="display-4 fw-bold shadow-sm">25:00</div>
+      
+      <!-- Progress Bar -->
+      <div class="progress mb-4">
+        <div id="progress-bar" class="progress-bar" role="progressbar" 
+             style="width: 100%;" aria-valuenow="100" aria-valuemin="0" 
+             aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <!-- Custom Timer Input -->
+    <div class="mb-3">
+      <input type="number" id="custom-time" class="form-control mx-auto shadow-sm" 
+             placeholder="25" min="1" max="120">
+      <small class="text-muted">Minutes (1-120)</small>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-3 d-flex justify-content-center gap-3">
+      <button id="start" class="btn btn-primary shadow-sm">
+        <span>Start</span>
+      </button>
+      <button id="pause" class="btn btn-success shadow-sm">
+        <span>Pause</span>
+      </button>
+      <button id="reset" class="btn btn-danger shadow-sm">
+        <span>Reset</span>
+      </button>
+    </div>
+  </div>
+  
+  <script src="scripts/sound-init.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
